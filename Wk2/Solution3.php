@@ -7,6 +7,7 @@
 Republic"=>"Prague", "Estonia"=>"Tallin", "Hungary"=>"Budapest", "Latvia"=>"Riga",
 "Malta"=>"Valetta", "Austria" => "Vienna", "Poland"=>"Warsaw") ;
 
+    asort($ceu);
     echo "<ul>";
     foreach ($ceu as $country => $capital) {
         echo "<li>The capital of ".$country." is ".$capital.".</li>";
