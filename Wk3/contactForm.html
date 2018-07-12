@@ -1,0 +1,40 @@
+<?php include("header.html");
+
+$contact = ["Phone", "Text", "Email"];
+$locations = ["Louisville", "Lexington", "Fort Knox", "Louisa", "Carlisle", "Online"];
+$months = ["January", "February", "March", "April", "May", "June",
+"July", "August", "September", "October", "November", "December"];
+$years = range(1980,2018);
+$days = range(1,31);
+
+function formText($id, $ph){
+    echo "<input id=\"$id\" type=\"text\" style=\"width:150px;\" placeholder=\"$ph\" /><br>";
+}
+
+function formOption($option){
+    echo '<select style="width:150px;" >';
+    foreach($option as $value) {
+        $key = strtolower($value);
+        echo "<option value=\"$key\" >$value</option>";
+    }
+    echo '</select><br>';
+}
+
+echo '<form action="processForm.php" method="GET" >';
+
+formText("fname","First Name");
+formText("lname","Last Name");
+formText("email","Email");
+formText("phone","Phone Number");
+formText("zip","Zip Code");
+formOption($contact);
+formOption($locations);
+formOption($months);
+formOption($days);
+formOption($years);
+
+echo '<input type="submit">';
+
+echo '</form>';
+
+include("footer.html") ?>
